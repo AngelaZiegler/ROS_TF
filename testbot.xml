@@ -1,0 +1,325 @@
+
+<robot name="testbot">
+
+<link name="axis">
+  <inertial>
+    <mass value="1"/>
+    <inertia ixx="100" ixy="0" ixz="0" iyy="100" iyz="0" izz="100" />
+    <origin/>
+  </inertial>
+  <visual>
+    <origin xyz="0 0 0" rpy="1.57 0 0" />
+    <geometry>
+      <cylinder radius="0.01" length=".5" />
+    </geometry>
+    <material name="gray">
+      <color rgba=".2 .2 .2 1" />
+    </material>
+  </visual>
+
+  <collision>
+    <origin xyz="0 0 0" rpy="1.57 0 0" />
+    <geometry>
+      <cylinder radius="0.01" length=".5" />
+    </geometry>
+    <contact_coefficients mu="0" kp="1000.0" kd="1.0"/>
+  </collision>
+</link>
+
+<link name="chassis">
+  <inertial>
+    <mass value="1"/>
+    <inertia ixx="100" ixy="0" ixz="0" iyy="100" iyz="0" izz="100" />
+    <origin/>
+  </inertial>
+
+  <visual>
+    <origin/>
+    <geometry>
+      <box size=".4 .8 .2" />
+    </geometry>
+    <material name="white">
+      <color rgba="1 1 1 1"/>
+    </material>
+  </visual>
+
+  <collision>
+    <origin xyz="0 0 -.3" />
+    <geometry>
+      <box size=".4 .8 .2" />
+    </geometry>
+    <contact_coefficients mu="0" kp="1000.0" kd="1.0"/>
+  </collision>
+</link>
+
+<joint name="connect" type="fixed">
+  <origin xyz="0 0 0" />
+  <parent link="axis"/>
+  <child link="chassis"/>
+</joint>
+
+<link name="turret">
+  <inertial>
+    <mass value="1"/>
+    <inertia ixx="100" ixy="0" ixz="0" iyy="100" iyz="0" izz="100" />
+    <origin/>
+  </inertial>
+
+  <visual>
+    <origin xyz="0 0 0" />
+    <geometry>
+      <sphere radius=".2" />
+    </geometry>
+    <material name="white">
+      <color rgba="1 1 1 1"/>
+    </material>
+  </visual>
+
+  <collision>
+    <origin xyz="0 0 0" />
+    <geometry>
+      <sphere radius=".2" />
+    </geometry>
+    <contact_coefficients mu="0" kp="1000.0" kd="1.0"/>
+  </collision>
+</link>
+
+<link name="w1">
+  <inertial>
+    <mass value="1"/>
+    <inertia ixx="100" ixy="0" ixz="0" iyy="100" iyz="0" izz="100" />
+    <origin/>
+  </inertial>
+
+  <visual>
+    <origin xyz="0 0 0" rpy="0 1.57 0" />
+    <geometry>
+      <cylinder radius=".08" length=".06"/>
+    </geometry>
+    <material name="gray">
+      <color rgba=".2 .2 .2 1" />
+    </material>
+  </visual>
+
+  <collision>
+    <origin xyz="0 0 0.2" rpy="0 1.57 0" />
+    <geometry>
+      <cylinder radius=".08" length=".06"/>
+    </geometry>
+    <contact_coefficients mu="0" kp="1000.0" kd="1.0"/>
+  </collision>
+</link>
+
+<link name="w2">
+  <inertial>
+    <mass value="1"/>
+    <inertia ixx="100" ixy="0" ixz="0" iyy="100" iyz="0" izz="100" />
+    <origin/>
+  </inertial>
+
+  <visual>
+    <origin xyz="0 0 0" rpy="0 1.57 0" />
+    <geometry>
+      <cylinder radius=".08" length=".06"/>
+    </geometry>
+    <material name="gray">
+      <color rgba=".2 .2 .2 1" />
+    </material>
+  </visual>
+
+  <collision>
+    <origin xyz="0 0 0.2" rpy="0 1.57 0" />
+    <geometry>
+      <cylinder radius=".08" length=".06"/>
+    </geometry>
+    <contact_coefficients mu="0" kp="1000.0" kd="1.0"/>
+  </collision>
+</link>
+
+<link name="w3">
+  <inertial>
+    <mass value="1"/>
+    <inertia ixx="100" ixy="0" ixz="0" iyy="100" iyz="0" izz="100" />
+    <origin/>
+  </inertial>
+
+  <visual>
+    <origin xyz="0 0 0" rpy="0 1.57 0" />
+    <geometry>
+      <cylinder radius=".08" length=".06"/>
+    </geometry>
+    <material name="gray">
+      <color rgba=".2 .2 .2 1" />
+    </material>
+  </visual>
+
+  <collision>
+    <origin xyz="0 0 0.2" rpy="0 1.57 0" />
+    <geometry>
+      <cylinder radius=".08" length=".06"/>
+    </geometry>
+    <contact_coefficients mu="0" kp="1000.0" kd="1.0"/>
+  </collision>
+</link>
+
+<link name="w4">
+  <inertial>
+    <mass value="1"/>
+    <inertia ixx="100" ixy="0" ixz="0" iyy="100" iyz="0" izz="100" />
+    <origin/>
+  </inertial>
+
+  <visual>
+    <origin xyz="0 0 0" rpy="0 1.57 0" />
+    <geometry>
+      <cylinder radius=".08" length=".06"/>
+    </geometry>
+    <material name="gray">
+      <color rgba=".2 .2 .2 1" />
+    </material>
+  </visual>
+
+  <collision>
+    <origin xyz="0 0 0.2" rpy="0 1.57 0" />
+    <geometry>
+      <cylinder radius=".08" length=".06"/>
+    </geometry>
+    <contact_coefficients mu="0" kp="1000.0" kd="1.0"/>
+  </collision>
+</link>
+
+<link name="w5">
+  <inertial>
+    <mass value="1"/>
+    <inertia ixx="100" ixy="0" ixz="0" iyy="100" iyz="0" izz="100" />
+    <origin/>
+  </inertial>
+
+  <visual>
+    <origin xyz="0 0 0" rpy="0 1.57 0" />
+    <geometry>
+      <cylinder radius=".08" length=".06"/>
+    </geometry>
+    <material name="gray">
+      <color rgba=".2 .2 .2 1" />
+    </material>
+  </visual>
+
+  <collision>
+    <origin xyz="0 0 0.2" rpy="0 1.57 0" />
+    <geometry>
+      <cylinder radius=".08" length=".06"/>
+    </geometry>
+    <contact_coefficients mu="0" kp="1000.0" kd="1.0"/>
+  </collision>
+</link>
+
+<link name="w6">
+  <inertial>
+    <mass value="1"/>
+    <inertia ixx="100" ixy="0" ixz="0" iyy="100" iyz="0" izz="100" />
+    <origin/>
+  </inertial>
+
+  <visual>
+    <origin xyz="0 0 0" rpy="0 1.57 0" />
+    <geometry>
+      <cylinder radius=".08" length=".06"/>
+    </geometry>
+    <material name="gray">
+      <color rgba=".2 .2 .2 1" />
+    </material>
+  </visual>
+
+  <collision>
+    <origin xyz="0 0 0.2" rpy="0 1.57 0" />
+    <geometry>
+      <cylinder radius=".08" length=".06"/>
+    </geometry>
+    <contact_coefficients mu="0" kp="1000.0" kd="1.0"/>
+  </collision>
+</link>
+
+<link name="gun">
+  <inertial>
+    <mass value="1"/>
+    <inertia ixx="100" ixy="0" ixz="0" iyy="100" iyz="0" izz="100" />
+    <origin/>
+  </inertial>
+
+  <visual>
+    <origin xyz="0 0.25 0" rpy="1.57 0 0"/>
+    <geometry>
+      <cylinder radius=".05" length=".5" />
+    </geometry>
+    <material name="white" />
+  </visual>
+
+  <collision>
+    <origin xyz="0 0.25 0" rpy="1.57 0 0"/>
+    <geometry>
+      <cylinder radius=".04" length=".5" />
+    </geometry>
+    <contact_coefficients mu="0" kp="1000.0" kd="1.0"/>
+  </collision>
+</link>
+
+<joint name="ring" type="revolute">
+  <origin xyz="0 0 0.1" />
+  <parent link="chassis"/>
+  <child link="turret"/>
+  <axis xyz="0 0 1" />
+  <limit upper="1.57" lower="-1.57" effort="10" velocity="10" />
+</joint>
+
+<joint name="j1" type="continuous">
+  <origin xyz="-.2 .2 -.05" />
+  <axis xyz="1 0 0" />
+  <parent link="chassis"/>
+  <child link="w1"/>
+</joint>
+
+<joint name="j2" type="continuous">
+  <origin xyz="-.2 0 -.05" />
+  <axis xyz="1 0 0" />
+  <parent link="chassis"/>
+  <child link="w2"/>
+</joint>
+
+<joint name="j3" type="continuous">
+  <origin xyz="-.2 -.2 -.05" />
+  <axis xyz="1 0 0" />
+  <parent link="chassis"/>
+  <child link="w3"/>
+</joint>
+
+<joint name="j4" type="continuous">
+  <origin xyz=".2 .2 -.05" />
+  <axis xyz="1 0 0" />
+  <parent link="chassis"/>
+  <child link="w4"/>
+</joint>
+
+<joint name="j5" type="continuous">
+  <origin xyz=".2 0 -.05" />
+  <axis xyz="1 0 0" />
+  <parent link="chassis"/>
+  <child link="w5"/>
+</joint>
+
+<joint name="j6" type="continuous">
+  <origin xyz=".2 -.2 -.05" />
+  <axis xyz="1 0 0" />
+  <parent link="chassis"/>
+  <child link="w6"/>
+</joint>
+
+<joint name="gunbase" type="revolute">
+  <parent link="turret"/>
+  <child link="gun"/>
+  <origin xyz="0 0 0.1" rpy="0 0 0" />
+  <axis xyz="1 0 0" />
+  <limit upper="1.57" lower="-1.57" effort="10" velocity="10" />
+</joint>
+
+</robot>
