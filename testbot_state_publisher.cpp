@@ -61,7 +61,7 @@ int main(int argc, char** argv) {
         if (tilt>.8 || tilt<0) tinc *= -1;//-.5
         rotate += rinc;
         if (rotate>.5 || rotate<-.5) rinc *= -1;
-        swivel += (-1) * degree;//机器人头转动速度
+        swivel += (-1) * degree;
         angle += degree/4;
 
         // This will adjust as needed per iteration
