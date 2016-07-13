@@ -16,6 +16,15 @@
   </collision>
 </xacro:macro>
 
+<xacro:macro name="joint" params="name origin child">
+  <joint name="${name}" type="continuous">
+    <origin xyz="${origin}" />
+    <axis xyz="1 0 0" />
+    <parent link="chassis"/>
+    <child link="${child}"/>
+  </joint>
+</xacro:macro>
+
 <robot name="testbot">
 
 <link name="axis">
@@ -208,47 +217,12 @@
   <limit upper="1.57" lower="-1.57" effort="10" velocity="10" />
 </joint>
 
-<joint name="j1" type="continuous">
-  <origin xyz="-.2 .2 -.05" />
-  <axis xyz="1 0 0" />
-  <parent link="chassis"/>
-  <child link="w1"/>
-</joint>
-
-<joint name="j2" type="continuous">
-  <origin xyz="-.2 0 -.05" />
-  <axis xyz="1 0 0" />
-  <parent link="chassis"/>
-  <child link="w2"/>
-</joint>
-
-<joint name="j3" type="continuous">
-  <origin xyz="-.2 -.2 -.05" />
-  <axis xyz="1 0 0" />
-  <parent link="chassis"/>
-  <child link="w3"/>
-</joint>
-
-<joint name="j4" type="continuous">
-  <origin xyz=".2 .2 -.05" />
-  <axis xyz="1 0 0" />
-  <parent link="chassis"/>
-  <child link="w4"/>
-</joint>
-
-<joint name="j5" type="continuous">
-  <origin xyz=".2 0 -.05" />
-  <axis xyz="1 0 0" />
-  <parent link="chassis"/>
-  <child link="w5"/>
-</joint>
-
-<joint name="j6" type="continuous">
-  <origin xyz=".2 -.2 -.05" />
-  <axis xyz="1 0 0" />
-  <parent link="chassis"/>
-  <child link="w6"/>
-</joint>
+<xacro:joint name="j1" origin="-.2 .2 -.05" child="w1"/>
+<xacro:joint name="j2" origin="-.2 0 -.05" child="w2"/>
+<xacro:joint name="j3" origin="-.2 -.2 -.05" child="w3"/>
+<xacro:joint name="j4" origin=".2 .2 -.05" child="w4"/>
+<xacro:joint name="j5" origin=".2 0 -.05" child="w5"/>
+<xacro:joint name="j6" origin=".2 -.2 -.05" child="w6"/>
 
 <joint name="gunbase" type="revolute">
   <parent link="turret"/>
